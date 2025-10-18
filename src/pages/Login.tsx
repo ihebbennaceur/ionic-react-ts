@@ -52,18 +52,6 @@ const Login: React.FC = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   <IonItem>
 
     <IonInput
