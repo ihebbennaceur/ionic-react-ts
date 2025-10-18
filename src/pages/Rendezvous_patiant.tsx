@@ -12,7 +12,7 @@ export default function RDV_patiant() {
 
   return <div> 
 
-    <h2>Mes Rendez-vous</h2>
+    {/* <h2>Mes Rendez-vous</h2> */}
     <ul>
       {rd.map((rendezvous, index) => (
         <li key={index}>
