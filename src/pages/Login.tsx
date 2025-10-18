@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import {  IonItem, IonLabel, IonInput, IonButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonItem, IonLabel, IonInput, IonButton  } from '@ionic/react';
+
 
 import { useState }  from 'react';
 
