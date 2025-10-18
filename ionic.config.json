@@ -1,0 +1,7 @@
+{
+  "name": "medflow_ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
