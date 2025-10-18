@@ -1,20 +1,17 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
+import { IonReactRouter } from '@ionic/react-router';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
-const ErrorElement: React.FC = () => <div>Une erreur est survenue.</div>;
-
 const Router: React.FC = () => (
-    <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path="/login" component={Login} />
-            <Route component={ErrorElement} />
-        </Switch>
-    </BrowserRouter>
+  <IonReactRouter>
+    <Route exact path="/login" component={Login} />
+    <Route exact path="/register" component={Register} />
+    <Route exact path="/">
+      <Redirect to="/login" />
+    </Route>
+  </IonReactRouter>
 );
-
-<Route exact path="/register" component={Register} />
 
 export default Router;
