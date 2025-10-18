@@ -6,10 +6,12 @@ import {  IonItem, IonLabel, IonInput, IonButton } from '@ionic/react';
 import { useState }  from 'react';
 
 
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
+
 
 const Login: React.FC = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
   return (
     <IonPage>
         <IonHeader>
