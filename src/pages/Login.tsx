@@ -14,17 +14,24 @@ const Login: React.FC = () => {
 
   return (
     <IonPage>
-        <IonHeader>
-
-        <IonToolbar>
+        
+         <IonHeader>
+        <IonToolbar
+          style={{
+            background: 'linear-gradient(90deg, #0070f3, #60a5fa)',
+            color: '#0a0101ff',
+            textAlign: 'center',
+            fontWeight: 600,
+            letterSpacing: '1px',
+          }}
+        >
           <IonTitle>Login</IonTitle>
         </IonToolbar>
-
-        </IonHeader>
+      </IonHeader>
       
 
 
-<IonContent className="ion-padding">
+<IonContent className="ion-padding" >
 
   <IonItem>
   
