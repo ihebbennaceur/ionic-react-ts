@@ -1,4 +1,7 @@
 import './ExploreContainer.css';
+import { IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuToggle, IonButton, IonIcon } from '@ionic/react';
+import { menu } from 'ionicons/icons';
+import React from 'react';
 
 interface ContainerProps { }
 
