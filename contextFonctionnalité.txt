@@ -1,0 +1,300 @@
+# Documentation des Fonctionnalités - Application Médicale Ionic
+
+## Vue d'ensemble de l'application
+Cette application médicale Ionic React TypeScript offre des interfaces différenciées pour 4 types d'acteurs avec des systèmes de permissions spécifiques et un contrôle d'accès centralisé.
+
+---
+
+## 👤 **ACTEUR 1 : PATIENT**
+
+### **Interface d'accès :** `/tabs/*`
+### **Type de compte :** Auto-création autorisée via page d'inscription
+
+### **Fonctionnalités principales :**
+
+#### 🏠 **Page d'accueil** (`/tabs/home`)
+- Tableau de bord personnalisé
+- Aperçu des prochains rendez-vous
+- Accès rapide aux fonctionnalités principales
+- Notifications de rendez-vous
+
+#### 👤 **Profil patient** (`/tabs/profile`)
+- ✅ Visualisation des informations personnelles
+- ✅ Modification des données (nom, prénom, email)
+- ✅ Affichage du rôle (Patient)
+- ✅ **Bouton de déconnexion** avec confirmation
+- Gestion de l'avatar
+- Historique médical personnel
+
+#### 📅 **Gestion des rendez-vous** (`/tabs/rdv`)
+- ✅ Prise de rendez-vous en ligne
+- ✅ Sélection du médecin et de la spécialité
+- ✅ Choix de la date et de l'heure
+- ✅ Visualisation des rendez-vous existants
+- ✅ Annulation de rendez-vous
+- ✅ Historique des consultations passées
+
+### **Limitations :**
+- Accès uniquement à ses propres données
+- Pas d'accès aux informations d'autres patients
+- Pas de fonctions administratives
+
+---
+
+## 👨‍⚕️ **ACTEUR 2 : MÉDECIN**
+
+### **Interface d'accès :** `/doctor-tabs/*`
+### **Type de compte :** Création EXCLUSIVE par l'administrateur
+
+### **Fonctionnalités principales :**
+
+#### 📋 **Profil médecin** (`/doctor-tabs/profile`)
+- ✅ Informations professionnelles (spécialité, expérience)
+- ✅ Gestion des disponibilités et horaires de travail
+- ✅ **Bouton de déconnexion** intégré
+- ✅ Modification des informations personnelles
+- Statistiques de consultations
+
+#### 📅 **Agenda médical** (`/doctor-tabs/agenda`)
+- ✅ Vue calendrier des rendez-vous du jour/semaine
+- ✅ Détails des consultations programmées
+- ✅ Informations patients pour chaque RDV
+- ✅ Gestion des statuts (confirmé, en attente, terminé)
+- ✅ **Bouton de déconnexion** dans l'en-tête
+- Actions rapides sur les rendez-vous
+
+#### 🩺 **Consultations** (`/doctor-tabs/consultation`)
+- ✅ Dossier médical complet des patients
+- ✅ Saisie des observations médicales
+- ✅ Gestion des constantes vitales
+- ✅ Historique des consultations
+- ✅ **Bouton de déconnexion** disponible
+- Interface de consultation en temps réel
+
+#### 💊 **Prescriptions** (`/doctor-tabs/prescriptions`)
+- ✅ Rédaction d'ordonnances
+- ✅ Gestion des médicaments
+- ✅ Historique des prescriptions
+- ✅ Impression et envoi sécurisé
+- Base de données médicamenteuse
+
+#### ⏰ **Disponibilités** (`/doctor-tabs/availability`)
+- ✅ Définition des créneaux horaires
+- ✅ Gestion des jours de travail
+- ✅ Configuration des pauses
+- ✅ Planification des congés
+- Synchronisation avec l'agenda
+
+#### 🔔 **Notifications** (`/doctor-tabs/notifications`)
+- ✅ Alertes de nouveaux rendez-vous
+- ✅ Rappels de consultations
+- ✅ Messages du système
+- ✅ Notifications d'urgence
+- Gestion des préférences
+
+### **Permissions spéciales :**
+- Accès aux dossiers médicaux des patients
+- Modification des prescriptions
+- Gestion de son agenda personnel
+- Consultation des statistiques professionnelles
+
+---
+
+## 👩‍💼 **ACTEUR 3 : RÉCEPTIONNISTE**
+
+### **Interface d'accès :** `/receptionist-tabs/*`
+### **Type de compte :** Création EXCLUSIVE par l'administrateur
+
+### **Fonctionnalités principales :**
+
+#### 👤 **Profil réceptionniste** (`/receptionist-tabs/profile`)
+- ✅ Informations professionnelles (département, poste)
+- ✅ Affichage des permissions assignées
+- ✅ **Bouton de déconnexion** avec confirmation
+- ✅ Statistiques d'activité
+- Horaires de travail
+
+#### 📅 **Gestion des rendez-vous** (`/receptionist-tabs/appointments`)
+- ✅ Vue globale de tous les rendez-vous
+- ✅ Création de RDV pour les patients
+- ✅ Modification et annulation
+- ✅ Gestion des listes d'attente
+- ✅ Recherche et filtrage avancés
+- Statistiques de fréquentation
+
+#### 👨‍⚕️ **Gestion des médecins** (`/receptionist-tabs/doctors`)
+- ✅ Consultation des plannings médicaux
+- ✅ Visualisation des disponibilités
+- ✅ Coordination des remplacements
+- ✅ Gestion des urgences
+- Communication avec l'équipe médicale
+
+#### 👥 **Gestion des patients** (`/receptionist-tabs/patients`)
+- ✅ Base de données des patients
+- ✅ Recherche et consultation des dossiers
+- ✅ Mise à jour des informations de contact
+- ✅ Gestion des dossiers administratifs
+- ✅ Historique des visites
+
+#### 🔔 **Notifications** (`/receptionist-tabs/notifications`)
+- ✅ Alertes système importantes
+- ✅ Notifications de rendez-vous
+- ✅ Messages de l'administration
+- ✅ Rappels de tâches
+- Gestion des urgences
+
+### **Permissions configurables :**
+- **Gestion des rendez-vous** : Création, modification, suppression
+- **Gestion des médecins** : Consultation des plannings
+- **Gestion des patients** : Accès aux dossiers administratifs
+- **Consultation des rapports** : Statistiques et données
+- **Gestion des horaires** : Planification et coordination
+
+---
+
+## 👑 **ACTEUR 4 : ADMINISTRATEUR**
+
+### **Interface d'accès :** `/admin-tabs/*`
+### **Type de compte :** Compte super-administrateur préconfiguré
+
+### **Fonctionnalités principales :**
+
+#### 🏛️ **Tableau de bord administrateur** (`/admin-tabs/profile`)
+- ✅ **Statistiques système globales**
+  - Nombre total d'utilisateurs par type
+  - Utilisateurs actifs vs inactifs
+  - Nouveaux comptes créés
+- ✅ **Activités récentes du système**
+  - Dernières connexions
+  - Dernières créations de comptes
+  - Actions importantes
+- ✅ **Permissions administrateur**
+  - Contrôle total du système
+  - Accès à toutes les fonctionnalités
+- ✅ **Bouton de déconnexion** sécurisé
+
+#### 👥 **Gestion des patients** (`/admin-tabs/patients`)
+- ✅ **Consultation complète**
+  - Vue d'ensemble de tous les patients
+  - Détails des profils et historiques
+- ✅ **Recherche et filtrage avancés**
+  - Par nom, email, date d'inscription
+  - Par statut (actif, inactif, suspendu)
+- ✅ **Actions de modération**
+  - Consultation des dossiers
+  - Suppression de comptes avec confirmation
+  - Gestion des statuts
+- ✅ **Statistiques patients**
+  - Nombre total, actifs, suspendus
+  - Évolution des inscriptions
+
+#### 👨‍⚕️ **Gestion des médecins** (`/admin-tabs/doctors`)
+- ✅ **Création de comptes médicaux**
+  - Génération automatique email/mot de passe
+  - Assignation des spécialités
+  - Configuration des profils professionnels
+- ✅ **Gestion complète des médecins**
+  - Modification des informations professionnelles
+  - Gestion des tarifs de consultation
+  - Configuration des horaires de travail
+- ✅ **Contrôle des accès**
+  - Activation/suspension de comptes
+  - Gestion des permissions spéciales
+  - Copie des identifiants de connexion
+- ✅ **Fonctionnalités avancées**
+  - Recherche par spécialité, statut
+  - Filtrage par département
+  - Statistiques professionnelles
+
+#### 👩‍💼 **Gestion des réceptionnistes** (`/admin-tabs/receptionists`)
+- ✅ **Création de comptes réceptionnistes**
+  - Génération automatique des identifiants
+  - Assignation aux départements
+  - Configuration des postes et salaires
+- ✅ **Gestion des permissions granulaires**
+  - Gestion des rendez-vous : ✓/✗
+  - Gestion des médecins : ✓/✗
+  - Gestion des patients : ✓/✗
+  - Consultation des rapports : ✓/✗
+  - Gestion des plannings : ✓/✗
+- ✅ **Administration RH**
+  - Gestion des salaires
+  - Assignation des départements
+  - Contrôle des horaires de travail
+- ✅ **Contrôle qualité**
+  - Supervision des activités
+  - Rapports de performance
+  - Formation et support
+
+### **Pouvoirs exclusifs :**
+- **Création de comptes professionnels** : Seul l'admin peut créer des comptes médecins/réceptionnistes
+- **Contrôle total des permissions** : Attribution et révocation des droits d'accès
+- **Gestion des données sensibles** : Accès à toutes les informations du système
+- **Administration système** : Configuration globale et paramètres de sécurité
+
+---
+
+## 🔐 **SYSTÈME DE SÉCURITÉ ET PERMISSIONS**
+
+### **Contrôle d'accès :**
+- ✅ **Patients** : Auto-inscription autorisée
+- ✅ **Médecins** : Création EXCLUSIVE par l'admin
+- ✅ **Réceptionnistes** : Création EXCLUSIVE par l'admin
+- ✅ **Admin** : Compte prédéfini du système
+
+### **Navigation sécurisée :**
+- Routes protégées par rôle (`/tabs/`, `/doctor-tabs/`, `/receptionist-tabs/`, `/admin-tabs/`)
+- Redirections automatiques selon le type d'utilisateur
+- Sessions sécurisées avec déconnexion
+
+### **Boutons de déconnexion :**
+- ✅ Présents sur toutes les interfaces principales
+- ✅ Confirmation obligatoire avant déconnexion
+- ✅ Redirection automatique vers la page de connexion
+- ✅ Messages de confirmation utilisateur
+
+---
+
+## 🎯 **IDENTIFIANTS DE DÉMONSTRATION**
+
+### **Patient :**
+- Email: `patient@demo.com`
+- Mot de passe: `demo123`
+
+### **Médecin :**
+- Email: `docteur@demo.com`
+- Mot de passe: `demo123`
+
+### **Réceptionniste :**
+- Email: `receptionniste@demo.com`
+- Mot de passe: `demo123`
+
+### **Administrateur :**
+- Email: `admin@demo.com`
+- Mot de passe: `admin123`
+
+---
+
+## 📱 **TECHNOLOGIES UTILISÉES**
+
+- **Framework** : Ionic React v8.5.0
+- **Langage** : TypeScript
+- **Routage** : React Router v5.3.4
+- **Interface** : Composants Ionic natifs
+- **État** : React Hooks
+- **Données** : Mock data pour démonstration
+
+---
+
+## 🚀 **UTILISATION**
+
+1. **Démarrage** : `npm run dev` ou `ionic serve`
+2. **Connexion** : Sélectionner le type d'utilisateur sur la page de login
+3. **Navigation** : Utiliser les onglets spécifiques à chaque rôle
+4. **Déconnexion** : Bouton disponible sur toutes les pages principales
+
+---
+
+**Dernière mise à jour** : 21 octobre 2025  
+**Version** : 1.0.0  
+**Statut** : Prêt pour démonstration
